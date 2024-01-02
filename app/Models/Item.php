@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Item extends Model
 {
     use HasFactory;
-    protected $fillable = ["name","description","container_id","category_id"];
+    protected $fillable = ["name","description","container_id","category_id", 'user_id'];
     public function container()
     {
         return $this->belongsTo(Container::class);

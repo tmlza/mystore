@@ -23,6 +23,7 @@ use NunoMaduro\Collision\Adapters\Phpunit\State;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ItemResource\RelationManagers;
 use App\Filament\Resources\ItemResource\RelationManagers\ContainerRelationManager;
+use Illuminate\Support\Facades\Auth;
 
 class ItemResource extends Resource
 {
