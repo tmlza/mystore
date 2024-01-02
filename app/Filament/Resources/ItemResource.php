@@ -37,7 +37,6 @@ class ItemResource extends Resource
             ->schema([
                 TextInput::make('name')
                 ->columnSpanFull(),
-                TextInput::make('auth().name'),
                 Select::make('container_id')
                     ->relationship(name:'container',titleAttribute:'name')
                     ->searchable()
