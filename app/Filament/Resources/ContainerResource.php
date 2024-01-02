@@ -29,7 +29,8 @@ class ContainerResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name'),
-                TextInput::make('Description'),
+                TextInput::make('Description')
+                ->nullable(),
             ]);
     }
 
@@ -39,7 +40,7 @@ class ContainerResource extends Resource
             ->columns([
                 TextColumn::make('id'),
                 TextColumn::make('name'),
-                TextColumn::make('category.name'),
+                TextColumn::make('user.name'),
             ])
             ->filters([
                 //

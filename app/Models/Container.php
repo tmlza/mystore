@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -12,14 +14,19 @@ class Container extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["name","description"];
+    protected $fillable = ["user_id","name","description"];
     public function categories():BelongsToMany
     {
         return $this->belongsToMany(Category::class,'container_categories');
     }
     public function items():HasMany
     {
-        return $this->HasMany(Item::class);
+        return $this->hasM(Item::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }
 

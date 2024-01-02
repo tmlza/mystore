@@ -44,8 +44,17 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function containers(): HasMany
+    {
+        return $this->hasMany(Container::class);
+    }
+    public function categories(): HasMany
+    {
+        return $this->hasMany(Container::class);
+    }
     public function items(): HasMany
     {
-        return $this->hasMany(Item::class);
+        return $this->hasMany(Container::class);
     }
+    
 }
